@@ -58,7 +58,7 @@ function MessageBox(props){
     <div className="c-input-group u-letter-box-medium chatbox">
       <div className="o-field o-field--icon-right">
         <input onKeyPress={(e)=>{
-        if(e.key == 'Enter'){
+        if(e.key === 'Enter'){
           let newMessage = {message:userMessage,from:name}
           setMessages(messages=>[...messages,newMessage]);
           setUserMessage('')
