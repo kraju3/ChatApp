@@ -5,9 +5,9 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 import Home from './components/Home'
 
+import dotenv from 'dotenv';
 
-
-
+dotenv.config()
 
 ReactDOM.render(
   <React.StrictMode>

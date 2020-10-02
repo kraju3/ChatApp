@@ -4,12 +4,10 @@ import socketIOClient from "socket.io-client";
 import '../css/MessageBox.css'
 import Message from './Message'
 
-const ENDPOINT= "localhost:3000"
-
 function MessageBox(props){
 
 
-    let [socket]=useState(socketIOClient(ENDPOINT));
+    let [socket]=useState(socketIOClient(process.env.ENDPOINT));
     const [name,setName]=useState(props.name)
     const [server,setServer]=useState(props.server)
     const[messages,setMessages] = useState([])

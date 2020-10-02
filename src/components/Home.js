@@ -24,7 +24,7 @@ function Home(){
       setUserName(info.name)
       UpdateServer(info.server)
 
-      fetch('http://localhost:3000/server/login',{method:"POST",headers:{
+      fetch(`${process.env.SERVER}/server/login`,{method:"POST",headers:{
           "Content-Type":"application/json"
 
       },body:JSON.stringify(info)}).then(res=>res.json()).then(response=>{
