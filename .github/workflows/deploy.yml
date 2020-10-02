@@ -30,7 +30,7 @@ jobs:
     - name: npm install and build dependencies
       run: |
         npm install
-        npm run build
+        CI=false npm run build
     - name: 'Deploy to Azure WebApp AppServices'
       uses: azure/webapps-deploy@v1
       with: 
