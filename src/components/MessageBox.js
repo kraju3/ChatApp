@@ -4,10 +4,12 @@ import socketIOClient from "socket.io-client";
 import '../css/MessageBox.css'
 import Message from './Message'
 
+const ENDPOINT=process.env.REACT_APP_ENDPOINT
+
 function MessageBox(props){
 
 
-    let [socket]=useState(socketIOClient(process.env.ENDPOINT));
+    let [socket]=useState(socketIOClient(ENDPOINT));
     const [name,setName]=useState(props.name)
     const [server,setServer]=useState(props.server)
     const[messages,setMessages] = useState([])

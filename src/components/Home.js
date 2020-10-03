@@ -17,6 +17,8 @@ function Home(){
     useEffect(()=>{
       setUserName(name)
       UpdateServer(server)
+      console.log(process.env.NODE_ENV)
+      console.log(process.env.REACT_APP_SERVER)
   
     },[server,name])
 
@@ -24,7 +26,7 @@ function Home(){
       setUserName(info.name)
       UpdateServer(info.server)
 
-      fetch(`${process.env.SERVER}/server/login`,{method:"POST",headers:{
+      fetch(`${process.env.REACT_APP_SERVER}/server/login`,{method:"POST",headers:{
           "Content-Type":"application/json"
 
       },body:JSON.stringify(info)}).then(res=>res.json()).then(response=>{
